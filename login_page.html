@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/man-breaking-loaf-bread_23-2148719003.jpg?t=st=1714398492~exp=1714402092~hmac=887aa9788648993cdff8192cda73676cbd7e5d3e4e6f211903e104a25b103c3f&w=1480');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        .container {
+            width: 300px;
+            background-color: #ffffffd1;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 100px rgb(0, 0, 0);
+        }
+    
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px; /* Adjust font size for headings */
+            font-family: 'Gent', sans-serif; /* Add font family */
+        }
+    
+        .form-group {
+            margin-bottom: 50px;
+        }
+    
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #9f9a9a;
+            border-radius: 5px;
+        }
+    
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            border: none;
+            border-radius: 5px;
+            color: #ffffffc2;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    
+        .form-group button:hover {
+            background-color: #000000;
+        }
+    
+        .new-account {
+            text-align: center;
+            font-family: 'Gent', sans-serif; /* Add font family */
+        }
+    
+        .new-account a {
+            color: #000000;
+            text-decoration: none;
+        }
+    
+        .new-account a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Hide the sign-up form initially */
+        #signup-form {
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="new-account">
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <!-- Sign-up form -->
+    <div class="container" id="signup-form">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="new-username">New Username</label>
+            <input type="text" id="new-username" placeholder="Enter your new username">
+        </div>
+        <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" placeholder="Enter your new password">
+        </div>
+        <div class="form-group">
+            <button onclick="signup()">Sign Up</button>
+        </div>
+        <div class="new-account">
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Perform login authentication here
+            console.log("Login attempt with username: " + username + " and password: " + password);
+        }
+
+        function signup() {
+            var newUsername = document.getElementById("new-username").value;
+            var newPassword = document.getElementById("new-password").value;
+
+            // Perform sign-up process here
+            console.log("Sign-up attempt with new username: " + newUsername + " and new password: " + newPassword);
+        }
+
+        function showSignupForm() {
+            document.getElementById("signup-form").style.display = "block";
+            document.querySelector('.container').style.display = 'none';
+        }
+
+        function showLoginForm() {
+            document.querySelector('.container').style.display = 'block';
+            document.getElementById("signup-form").style.display = "none";
+        }
+    </script>
+</body>
+</html>
